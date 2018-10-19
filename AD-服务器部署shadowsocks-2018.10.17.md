@@ -62,7 +62,7 @@
 
     _也可以进行多用户设置_
 
-    `{
+    ```{
     "server": "172.21.166.194",
     "port_password": {
     "8388": "AS3e123jK",
@@ -72,19 +72,19 @@
     "timeout":30,
     "method":"aes-256-cfb",
     "fast_open": false
-    }`
+    }```
 
 5. 创建服务文件
 
     `nano /etc/systemd/system/ssserver.service`
 
-    `[Unit]
+    ```[Unit]
     Description=ssserver
     [Service]
     TimeoutStartSec=0
     ExecStart=/usr/bin/ssserver -c /etc/shadowsocks.json
     [Install]
-    WantedBy=multi-user.target`
+    WantedBy=multi-user.target```
 
 6. 启动服务
 
