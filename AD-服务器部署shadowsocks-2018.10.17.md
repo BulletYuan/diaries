@@ -44,13 +44,15 @@
 
     `nano /etc/shadowsocks.json`
 
-    `{
+    ```
+    {
     "server": "172.21.166.194",
     "server_port": 8388,
     "password": "AS3e123jK",
     "timeout": 30,
     "method": "aes-256-cfb"
-    }`
+    }
+    ```
 
     `server` : 专用网络下，这里只能写私网ip，不能写外网ip，否则启动失败！或者写0.0.0.0
 
