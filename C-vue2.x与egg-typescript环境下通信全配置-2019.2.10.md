@@ -10,7 +10,7 @@ npm i egg-socket.io --save
 
 1. `/config/plugin.ts`
 
-```typescript
+```TypeScript
 const plugin: EggPlugin = {
   io: {
     enable: true,
@@ -21,7 +21,7 @@ const plugin: EggPlugin = {
 
 2. `/config/config.default.ts`
 
-```typescript
+```TypeScript
 // 配置socket
 config.io = {
     init: {}, // passed to engine.io
@@ -49,7 +49,7 @@ config.io = {
 
 1. `/app/io/controller/hello.ts` socket接口业务
 
-```typescript
+```TypeScript
 import { Controller } from 'egg';
 
 // 此处声明接口是为了弥补egg-socket.io在ts下的缺陷
@@ -74,7 +74,7 @@ export default class HelloController extends Controller {
 
 1. `/app/io/middleware/auth.ts` socket中间件，在config中 `connectionMiddleware` 引用，每次连接时就会调用
 
-```typescript
+```TypeScript
 import { Context } from 'egg';
 
 export default function() {
@@ -90,7 +90,7 @@ export default function() {
 
 1. `/app/router.ts`
 
-```typescript
+```TypeScript
 import { Application } from 'egg';
 
 export default (app: Application) => {
@@ -114,7 +114,7 @@ npm i socket.io-client --save
 
 1. `/src/main.js`
 
-```javascript
+```TypeScript
 import Vue from 'vue';
 import App from './App.vue';
 import VueSocketIO from 'vue-socket.io';
