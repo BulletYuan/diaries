@@ -114,7 +114,7 @@ npm i socket.io-client --save
 
 1. `/src/main.js`
 
-```TypeScript
+```JavaScript
 import Vue from 'vue';
 import App from './App.vue';
 import VueSocketIO from 'vue-socket.io';
