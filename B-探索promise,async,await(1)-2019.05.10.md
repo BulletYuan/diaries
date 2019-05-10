@@ -90,4 +90,6 @@ setTimeout(()=>console.log(6),0)
 
 * [The JavaScript language - Async/await](https://javascript.info/async-await)
 
+* [MDN - await](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/await)
+
 * [Async/Await替代Promise的6个理由](https://blog.fundebug.com/2017/04/04/nodejs-async-await/)
