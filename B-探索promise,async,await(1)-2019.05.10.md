@@ -18,7 +18,7 @@ _PS:上面的代码放在代码块中不能运行，毕竟 `await` 没有放在 
 
 google了一些文章发现[这篇文章](https://javascript.info/async-await)讲的还不错，有兴趣的朋友可以翻译来看看。
 
-=====
+-------
 
 # Async
 
@@ -38,7 +38,7 @@ google了一些文章发现[这篇文章](https://javascript.info/async-await)�
 
 * 让出主线程（javascript是单线程执行）去执行其他方法，直到该此线程执行完成，才会继续去任务队列中依次取出 `promise` 的返回结果
 
-=====
+-------
 
 # 示例
 
