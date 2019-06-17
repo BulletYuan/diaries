@@ -31,6 +31,12 @@
     `yum -y install epel-release`
 
     `yum -y install pip python-pip`
+    
+    _如果epel安装成功但pip依然安装失败, 则说明epel工具没有开启, 再重新执行pip的安装过程_
+    
+    `yum install -y yum-utils`
+
+    `yum-config-manager --enable epel`
 
 3. 安装ss
 
