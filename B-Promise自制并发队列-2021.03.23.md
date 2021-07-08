@@ -51,3 +51,57 @@ async function queue(pms = [], limit = 3) {
     })
 }
 ```
+
+2021.07.08 增加有序返回最终数据列表（保持原有数组顺序）
+
+```javascript
+const queue = async (pms = [], limit = 3, ordering = false) => {
+    const tempSeq = [];
+    const result = [];
+    if (!pms || pms.length === 0) return undefined;
+    if (pms.length < limit) limit = pms.length;
+    pms.forEach((p, i) => {
+      if (p instanceof Promise) {
+        ordering ?
+          tempSeq[i] = p : tempSeq.push(p)
+      } else {
+        ordering ?
+          result[i] = p : result.push(p)
+      }
+    })
+    const seq = tempSeq.reduce((l, c, index) => c ? l.concat([{ fn: c, index }]) : l, [])
+    return new Promise(res => {
+      if (seq.length > 0) {
+        if (seq.length < limit) limit = seq.length;
+        const que = seq.slice(0, limit).map(async (obj, i) => {
+          const { fn, index } = obj
+          const r = await fn;
+          ordering ?
+            result[index] = r : result.push(r)
+          return i;
+        })
+        seq.reduce(async (last, cur, i) => {
+          const { fn, index } = cur
+          const c = await fn;
+          ordering ?
+            result[index] = c : result.push(c)
+          return last.then(() => {
+            return Promise.race(que);
+          })
+            .catch(err => {
+              console.error(err);
+            })
+            .then(res => {
+              que[res] = seq[i]
+            })
+        }, Promise.resolve())
+          .then(async () => {
+            await Promise.all(que)
+            res(result)
+          })
+      } else {
+        res(result)
+      }
+    })
+  }
+```
