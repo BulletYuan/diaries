@@ -1,3 +1,4 @@
+```javascript
 // 判定爻
 function J(c1, c2, c3) {
   const total = c1 + c2 + c3;
@@ -557,3 +558,4 @@ function C(type = 1, isLeft = 0, counts) {
   if (!Ben || !Zhi) return;
   console.log('本卦', `${Ben.name}-${Ben.label}\n${Ben.desc}`, '\n之卦', `${Zhi.name}-${Zhi.label}\n${Zhi.desc}`);
 }
+```
