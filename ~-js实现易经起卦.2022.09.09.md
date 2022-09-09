@@ -559,3 +559,13 @@ function C(type = 1, isLeft = 0, counts) {
   console.log('本卦', `${Ben.name}-${Ben.label}\n${Ben.desc}`, '\n之卦', `${Zhi.name}-${Zhi.label}\n${Zhi.desc}`);
 }
 ```
+使用方式
+铜钱起卦：
+```javascript
+C(1)
+```
+
+揲筮起卦
+```javascript
+C(2,常用手是否是左手?1:0,[输入6个「1-9」的数字在这个数组中，逗号分隔])
+```
