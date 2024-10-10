@@ -1,3 +1,4 @@
+```javascript
 function A(r) {
     const wuxing = {
         '0': '木',
@@ -76,3 +77,4 @@ function A(r) {
     return result
 }
 A()
+```
